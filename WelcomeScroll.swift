@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WelcomeScroll: View {
+    var doConfirm : () -> ()
     var body: some View {
         ZStack{
             Image("WelcomeScroll")
@@ -15,14 +16,19 @@ struct WelcomeScroll: View {
                 .frame(width: 650, height: 528)
                 .shadow(radius: 4, y:2)
             VStack{
-                Text("**Welcome to Indonesia Uncovered !**\nDiscover the many faces of Indonesia through our incredible landmarks. Let us show you the vibrant colors and unique perspectives that make our country so special.")
-                    .frame(width: 449, height: 342)
-                    .font(.system(size: 32))
-                    .multilineTextAlignment(.center)
+                Group{
+                    Text("**Let's Explore Indonesia !**")
+                        .font(.largeTitle)
+                        + Text("\n\nDiscover the many faces of Indonesia through our incredible landmarks. Let us show you the vibrant colors and unique perspectives that make our country so special.")
+                        .font(.system(size: 24))
+                }
+                .frame(width: 449, height: 342)
+                .multilineTextAlignment(.center)
+                .foregroundColor(AppColor.defBlack)
                 Button{
-                    
+                    self.doConfirm()
                 }label: {
-                    Text("Confirm")
+                    Text("Okay, Let's Explore !")
                         .bold()
                         .font(.system(size: 18))
                         .padding()
@@ -46,6 +52,6 @@ struct WelcomeScroll: View {
 
 struct WelcomeScroll_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeScroll()
+        WelcomeScroll(doConfirm: {})
     }
 }
