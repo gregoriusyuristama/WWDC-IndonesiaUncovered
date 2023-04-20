@@ -169,7 +169,7 @@ struct MapView: View {
                         }
                         .background(Color("CreamColor"))
                     }
-                    .padding(.top, 79)
+//                    .padding(.top, 60)
                     
                 }
             }

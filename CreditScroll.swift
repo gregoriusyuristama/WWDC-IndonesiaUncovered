@@ -36,13 +36,10 @@ struct CreditScroll: View {
                                 .stroke(Color.gray, lineWidth: 1)
                             )
                 }
-//                .padding()
                 .background(Color("CreamColor"))
                 .cornerRadius(8)
-//                .offset(x: 160)
             }
             .frame(width: 595, height: 343)
-//            .offset(y: 20)
    
         }
     }

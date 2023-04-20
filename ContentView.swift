@@ -3,7 +3,7 @@ import AVKit
 
 struct ContentView: View {
     @State var showMap: Bool = false
-    @State var showCredits: Bool = false
+    @State var isCreditShowed: Bool = false
     @State var isCardShowed: Bool = false
     @State var audioPlayer: AVAudioPlayer!
     
@@ -92,9 +92,9 @@ struct ContentView: View {
         }
     }
     func doToggleShowCredits() {
-        showCredits.toggle()
+        isCreditShowed.toggle()
         withAnimation{
-            if showCredits{
+            if isCreditShowed{
                 self.creditsScrollOpacity = 1.0
             } else {
                 self.creditsScrollOpacity = 0.0
